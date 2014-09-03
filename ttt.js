@@ -3,6 +3,7 @@ window.onload = function(){
   // Collection of all squares on the board.
   var squares = document.getElementsByTagName('td');
 	var header = document.getElementsByTagName('h2');
+	var para = document.getElementsByTagName('p');
   
   var turn = "X";
 	var winner = false;
@@ -14,9 +15,13 @@ window.onload = function(){
 		
 			if (turn == "X"){
 				turn = "O";
+				this.style.background = "#843D99";
+				this.style.color = "White";
 				header[0].innerHTML = "Player O go!";
 			} else {
 				turn = "X";
+				this.style.background = "Black";
+				this.style.color = "White";
 				header[0].innerHTML = "Player X go!";
 			};
 			
@@ -36,7 +41,9 @@ window.onload = function(){
 			  (squares[0].innerHTML == "X" && squares[3].innerHTML =="X" && squares[6].innerHTML == "X") ||
 			  (squares[1].innerHTML == "X" && squares[4].innerHTML =="X" && squares[7].innerHTML == "X") ||
 			  (squares[2].innerHTML == "X" && squares[5].innerHTML =="X" && squares[8].innerHTML == "X") ){
-					 header[0].innerHTML = "PLAYER X WINS!!<br />Game over!";
+					 header[0].innerHTML = "PLAYER X WINS!";
+					 header[1].innerHTML = "GAME OVER";
+					 para[0].innerHTML = '<input type="button" value="Reload Page" onClick="window.location.reload()">';
 					 winner = true;
 					 click();
 
@@ -49,6 +56,8 @@ window.onload = function(){
 			  						(squares[1].innerHTML == "O" && squares[4].innerHTML =="O" && squares[7].innerHTML == "O") ||
 			  						(squares[2].innerHTML == "O" && squares[5].innerHTML =="O" && squares[8].innerHTML == "O") ){
 			   							header[0].innerHTML = "PLAYER O WINS!!<br />Game over!";
+											header[1].innerHTML = "GAME OVER";
+											para[0].innerHTML = '<input type="button" value="Reload Page" onClick="window.location.reload()">';
 											winner = true;
 											click();
 			   } else if ( (squares[0].innerHTML == "O" || squares[0].innerHTML == "X") && 
@@ -61,6 +70,8 @@ window.onload = function(){
 										 (squares[7].innerHTML == "O" || squares[7].innerHTML == "X") && 
 										 (squares[8].innerHTML == "O" || squares[8].innerHTML == "X") ){
 											 header[0].innerHTML = "TIE GAME OH NOES!";
+											 header[1].innerHTML = "GAME OVER";
+											 para[0].innerHTML = '<input type="button" value="Reload Page" onClick="window.location.reload()">';
 											 winner = true;
 											 click();
 			  						};
