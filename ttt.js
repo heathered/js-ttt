@@ -28,9 +28,7 @@ window.onload = function(){
 			win();
 			
 		};
-		
-		// this.innerHTML = turn;
-  }
+  };
 
 	var win = function(){
 		if ((squares[0].innerHTML == "X" && squares[1].innerHTML =="X" && squares[2].innerHTML == "X") ||
@@ -55,7 +53,7 @@ window.onload = function(){
 			  						(squares[0].innerHTML == "O" && squares[3].innerHTML =="O" && squares[6].innerHTML == "O") ||
 			  						(squares[1].innerHTML == "O" && squares[4].innerHTML =="O" && squares[7].innerHTML == "O") ||
 			  						(squares[2].innerHTML == "O" && squares[5].innerHTML =="O" && squares[8].innerHTML == "O") ){
-			   							header[0].innerHTML = "PLAYER O WINS!!<br />Game over!";
+			   							header[0].innerHTML = "PLAYER O WINS!!";
 											header[1].innerHTML = "GAME OVER";
 											para[0].innerHTML = '<input type="button" value="Reload Page" onClick="window.location.reload()">';
 											winner = true;
@@ -85,7 +83,7 @@ window.onload = function(){
 			if (winner === true) {
 				squares[i].removeEventListener("click", add_mark);
 			};
-	  };
+		};
 	};
 
 	click();
